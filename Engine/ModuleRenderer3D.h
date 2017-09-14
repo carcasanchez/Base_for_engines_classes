@@ -6,12 +6,6 @@
 #include "Light.h"
 #include <map>
 
-#define MAX_LIGHTS 8
-
-struct Mesh_RenderInfo;
-struct viewPort;
-class Camera;
-
 class ModuleRenderer3D : public Module
 {
 public:
@@ -24,17 +18,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
-	void DrawLine(float3 a, float3 b, float4 color = float4(0.1f, 0.58f, 0.2f, 1.0f));
-	void DrawLocator(float4x4 transform = float4x4::identity, float4 color = float4(0.1f, 0.58f, 0.2f, 1.0f));
-	void DrawLocator(float3 position, float4 color = float4(0.1f, 0.58f, 0.2f, 1.0f));
-
-	Light light;
-
 private:
-	SDL_GLContext context;
-
-	//Only for read access
-	bool usingLights = true;
 };
 
 #endif
